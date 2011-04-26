@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>jQuery ImulusSlideshow Plugin | A much lighter alternative to jquery.cycle</title>
+
+	<meta charset="utf-8"/>
+	<meta name="description" content=""/>
+
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write("<script src='/scripts/jquery/jquery-1.5.2.min.js'>\x3C/script>")</script>
+
+	<!-- jQuery Plugins -->
+	<script src="/scripts/jquery/plugins/jquery.dotimeout.min.js"></script>
+	<script src="/scripts/jquery/plugins/jquery.imulusSlideshow.js"></script>
+
+	<!-- Imulus JS -->
+	<script src="/scripts/imulus/imulus.namespace.js"></script>
+	<script src="/scripts/imulus/imulus.interface.js"></script>
+
+	<!-- Giddy Up -->
+	<script src="/scripts/init.js"></script>
+	
+	<style type="text/css" media="screen">
+		* {
+			margin: 0; 
+			padding: 0; 
+		}
+		
+		body {
+			font: 12px/1.5 Arial, sans-serif;
+			background: #eee;
+			color: #555;
+		}
+		
+		.wrapper {
+			position: relative;
+			width: 940px;
+			margin: 0 auto;
+		}
+		
+		#content {
+			padding: 20px 0 10px 0;
+		}
+		
+		p { 
+			padding: 0 0 15px 0;
+		}
+		
+		h1, h2, h3, h4, h5 {
+			font-size: 20px;
+			color: #333;
+			padding-bottom: 10px;
+		}
+		
+		code {
+			display: inline-block;
+			padding: 15px 25px;
+			border: 1px solid #ccc;
+			background: #fff;
+			margin-bottom: 15px;
+			font-family: monaco, courier, sans-serif;
+			font-size: 13px;
+			color: #224D99;
+		}
+
+		.slide-holder {
+			height: 250px;
+		}
+		
+		.slide-holder .slide {
+			position: absolute;
+			right: 0;
+			left: 0;
+			height: 250px;
+		}
+
+		.slide-holder .slide h2 {
+			position: absolute;
+			left: 20px;
+			top: 20px;
+		}
+
+		#slide-nav {
+			padding: 30px;
+		}
+		
+		#slide-nav li {
+			float: left;
+			list-style: none;
+			margin-right: 45px;
+		}
+		
+		#slide-nav li.active {
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body class="home">
+
+	<div id="content"><div class="wrapper">
+		<h1>jQuery Plugin, ImulusSlideshow</h1>
+		<p>An alternative plugin to cycle, allows rotating through slides with mild configuration. A navigation is assigned to match the slides, if you hover over this it will stop the cycling and just rely on nav interaction.</p>
+		<p>Originally needed to do a slide that was 100% scalable width of the site. This plugin relies on the jquery plugin doTimeout. See example below:</p>
+		
+		<code><pre>$('.slide-holder .slide').imulusSlideshow({
+	slidesNavItems: $('#slide-nav ul li'),
+	timeout: 4500,
+	speed: 500 
+});</pre></code>
+	</div></div><!-- end content -->
+
+	<div class="wrapper autoclear" id="slide-nav">
+		<ul>
+			<li class="active">Slide 1</li>
+			<li>Slide 2</li>
+			<li>Slide 3</li>
+		</ul>
+	</div>
+	
+	<div class="slide-holder">
+
+		<div class="slide" style="background: url(/images/slide01.jpg) no-repeat 50% 0">
+			<div class="wrapper autoclear">
+				<h2>Slide One</h2>
+			</div>
+		</div><!-- end slide -->
+	
+		<div class="slide" style="background: url(/images/slide02.jpg) no-repeat 50% 0; display: none;">
+			<div class="wrapper autoclear">
+				<h2>Slide Two</h2>
+			</div>
+		</div><!-- end slide -->
+	
+		<div class="slide" style="background: url(/images/slide03.jpg) no-repeat 50% 0; display: none;">
+			<div class="wrapper autoclear">
+				<h2>Slide Three</h2>
+			</div>
+		</div><!-- end slide -->
+
+	
+	</div><!-- end slide-holder -->
+
+</body>
+</html>
